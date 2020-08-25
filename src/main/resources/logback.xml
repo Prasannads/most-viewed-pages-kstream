@@ -1,0 +1,14 @@
+<configuration>
+    <property name="mytPattern"
+              value="%date{ISO8601} | %-16thread | %-5level{5} | %-150message | %-35(%logger{0}:%-5L) | %mdc%n%exception{full}"/>
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+		</encoder>
+    </appender>
+
+    <root level="info">
+        <appender-ref ref="STDOUT" />
+    </root>
+</configuration>

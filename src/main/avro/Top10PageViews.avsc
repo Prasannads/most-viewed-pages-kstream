@@ -1,0 +1,23 @@
+{
+	"connect.name": "ksql.toppages",
+	"fields": [{
+			"name": "gender",
+			"type": "string"
+		},
+		{
+			"name": "pageid",
+			"type": "string"
+		},
+		{
+			"name": "distinctusers",
+			"type": "long"
+		},
+		{
+			"name": "viewtime",
+			"type": "long"
+		}
+	],
+	"name": "toppages",
+	"namespace": "ksql",
+	"type": "record"
+}
