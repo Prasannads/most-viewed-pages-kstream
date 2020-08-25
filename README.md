@@ -28,6 +28,7 @@ where    rank <= 10
 
 1. Build the project
 
+`avro:generate` (optional)
 `clean;assembly` (from sbt-shell) or `sbt "clean;assembly"` (from terminal)
 
 2. Run docker-compose
