@@ -13,9 +13,9 @@ window
 ```
 SELECT   gender, 
          pageid, 
-         COUNT(DISTINCT pageviews.userid)                                       AS distinctusers, 
-         SUM(viewtime)                                                          AS viewtime, 
-         ROW_NUMBER() OVER (partition BY gender, pageid ORDER BY Sum(viewtime)) AS rank 
+         COUNT(DISTINCT pageviews.userid)                                            AS distinctusers, 
+         SUM(viewtime)                                                               AS viewtime, 
+         ROW_NUMBER() OVER (partition BY gender, pageid ORDER BY Sum(viewtime) DESC) AS rank 
 FROM     users 
 JOIN     pageviews 
 ON       users.userid = pageviews.userid 
