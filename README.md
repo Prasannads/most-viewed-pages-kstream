@@ -11,17 +11,21 @@ window
 ## SQL Equivalent (not tested)
 
 ```
-SELECT   gender, 
-         pageid, 
-         COUNT(DISTINCT pageviews.userid)                                            AS distinctusers, 
-         SUM(viewtime)                                                               AS viewtime, 
-         ROW_NUMBER() OVER (partition BY gender, pageid ORDER BY Sum(viewtime) DESC) AS rank 
-FROM     users 
-JOIN     pageviews 
-ON       users.userid = pageviews.userid 
-GROUP BY 1, 2 
-ORDER BY 1, 2 
-where    rank <= 10
+SELECT * 
+FROM   (SELECT gender, 
+               pageid, 
+               COUNT(DISTINCT pageviews.userid) AS distinctusers, 
+               SUM(viewtime)                    AS viewtime, 
+               ROW_NUMBER() 
+                 OVER ( 
+                   partition BY gender, pageid 
+                   ORDER BY SUM(viewtime) DESC) AS rank 
+        FROM   users 
+               JOIN pageviews 
+                 ON users.userid = pageviews.userid 
+        GROUP  BY 1, 2 
+        ORDER  BY 1, 2) 
+WHERE  rank <= 10 
 ```
 
 ## How to Run
