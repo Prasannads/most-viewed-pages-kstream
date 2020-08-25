@@ -52,10 +52,10 @@ containers are up, but the services might take some time. Check `./start-sh` for
     
 ## Important Folders/Files.
 
-./docker-local-setup/connector-configuration -> Connector configurations for `users` and `pageviews`.
-./docker-local-setup/schemas -> Schemas of source and destination topics.
-./docker-local-setup/create-schemas-topics-and-connectors.sh -> Shell script to create schemas, topics and connectors.
-./start-sh -> Shell script. Starting point for Kstream service.
+- ./docker-local-setup/connector-configuration -> Connector configurations for `users` and `pageviews`.
+- ./docker-local-setup/schemas -> Schemas of source and destination topics.
+- ./docker-local-setup/create-schemas-topics-and-connectors.sh -> Shell script to create schemas, topics and connectors.
+- ./start-sh -> Shell script. Starting point for Kstream service.
     
 
 ## Notes to the reader
