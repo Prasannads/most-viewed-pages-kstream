@@ -15,11 +15,11 @@ SELECT *
 FROM   (SELECT gender, 
                pageid, 
                COUNT(DISTINCT pageviews.userid) AS distinctusers, 
-               SUM(viewtime)                    AS viewtime, 
+               SUM(viewtime)                    AS sumviewtime, 
                ROW_NUMBER() 
                  OVER ( 
                    partition BY gender, pageid 
-                   ORDER BY SUM(viewtime) DESC) AS rank 
+                   ORDER BY sumviewtime DESC) AS rank 
         FROM   users 
                JOIN pageviews 
                  ON users.userid = pageviews.userid 
