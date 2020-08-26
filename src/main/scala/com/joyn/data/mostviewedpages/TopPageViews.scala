@@ -15,6 +15,8 @@ import org.apache.kafka.streams.kstream.{GlobalKTable, TimeWindows}
 import org.apache.kafka.streams.scala.ImplicitConversions._
 import org.apache.kafka.streams.scala.Serdes._
 import org.apache.kafka.streams.scala.StreamsBuilder
+import org.apache.kafka.streams.scala.kstream.Suppressed
+import org.apache.kafka.streams.scala.kstream.Suppressed.BufferConfig
 
 // POJO classes
 case class GenderPageId(gender: String, pageId: String)
@@ -112,6 +114,7 @@ object TopPageViews extends App with AppMain with LazyLogging {
         val distinctUsers = scala.collection.mutable.Set[String]()
         viewTimeAggregator(v, agg, distinctUsers)
       })
+      .suppress(Suppressed.untilWindowCloses(BufferConfig.unbounded()))
       .toStream
       .selectKey((k, _) => k.key())
       .groupByKey
@@ -150,7 +153,7 @@ object TopPageViews extends App with AppMain with LazyLogging {
   }
 
   private def initializeTopViewsCollection: PageViewsWithUserCollection = {
-    val pageUserViews = Array.ofDim[PageViewsWithDistinctUsers](11)
+    val pageUserViews = Array.ofDim[PageViewsWithDistinctUsers](11) // Allow only top 10 in a window.
     PageViewsWithUserCollection(pageUserViews)
   }
 
