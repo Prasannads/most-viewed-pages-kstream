@@ -1,5 +1,7 @@
 # Most viewed pages
 
+[![Build Status](https://travis-ci.org/prasanna-ds/most-viewed-pages-kstream.svg?branch=master)](https://travis-ci.org/github/prasanna-ds/most-viewed-pages-kstream)
+
 ## Logic:
 - Joins the messages in these two topics on the user id field
 - Uses a 1 minute hopping window with 10 second advances to compute the 10 most viewed
