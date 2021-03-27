@@ -1,4 +1,4 @@
-package com.joyn.data.mostviewedpages.configuration
+package com.data.mostviewedpages.configuration
 
 import java.util.Properties
 

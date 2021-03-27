@@ -1,8 +1,8 @@
-package com.joyn.data.mostviewedpages
+package com.data.mostviewedpages
 
 import java.util.concurrent.TimeUnit
 
-import com.joyn.data.mostviewedpages.TopPageViews.buildGlobalKTable
+import TopPageViews.buildGlobalKTable
 import io.confluent.kafka.streams.serdes.avro.SpecificAvroSerde
 import ksql._
 import org.apache.kafka.common.serialization.Serde

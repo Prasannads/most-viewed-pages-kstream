@@ -1,4 +1,4 @@
-package com.joyn.data.mostviewedpages
+package com.data.mostviewedpages
 
 import java.time.{Duration, Instant}
 

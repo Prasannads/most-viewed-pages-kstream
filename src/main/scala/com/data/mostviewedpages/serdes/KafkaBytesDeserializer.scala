@@ -1,4 +1,4 @@
-package com.joyn.data.mostviewedpages.serdes
+package com.data.mostviewedpages.serdes
 
 import java.io.{ByteArrayInputStream, ObjectInputStream}
 import java.util

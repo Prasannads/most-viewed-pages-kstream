@@ -1,7 +1,7 @@
-package com.joyn.data.mostviewedpages
+package com.data.mostviewedpages
 
-import com.joyn.data.mostviewedpages.configuration.Configuration
-import com.joyn.data.mostviewedpages.service.StreamService
+import com.data.mostviewedpages.configuration.Configuration
+import com.data.mostviewedpages.service.StreamService
 import com.typesafe.scalalogging.LazyLogging
 import org.apache.kafka.common.serialization.Serde
 import org.apache.kafka.streams.Topology

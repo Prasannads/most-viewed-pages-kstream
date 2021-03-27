@@ -1,4 +1,4 @@
-package com.joyn.data.mostviewedpages.service
+package com.data.mostviewedpages.service
 
 import java.time.Duration
 import java.util.Properties
