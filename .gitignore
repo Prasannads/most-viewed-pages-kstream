@@ -12,6 +12,7 @@ project/plugins/project/
 .cache
 .lib/
 .bsp
+.semanticgraphs
 
 ### Scala ###
 *.class

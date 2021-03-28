@@ -1,11 +1,11 @@
 import sbt.{Credentials, Path}
 
 name := "most-viewed-pages-kstream"
-organization := "com.joyn.data"
+organization := "com.data"
 version := "1.0"
 scalaVersion := "2.12.10"
-credentials += Credentials(Path.userHome / ".sbt" / ".credentials")
 resolvers += "io.confluent" at "https://packages.confluent.io/maven/"
+resolvers += "graphbuddy" at "virtuslab"
 resolvers += Resolver.mavenLocal
 inThisBuild(List(assemblyJarName in assembly := "most-viewed-pages-kstream.jar"))
 libraryDependencies ++= {
