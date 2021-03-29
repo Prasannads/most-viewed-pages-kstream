@@ -6,7 +6,6 @@ import com.data.mostviewedpages.utils.SerdeUtils
 
 import java.time.Duration
 import java.util
-import com.data.mostviewedpages.serdes.KafkaBytesSerializer
 import com.typesafe.scalalogging.LazyLogging
 import io.confluent.kafka.streams.serdes.avro.SpecificAvroSerde
 import ksql._

@@ -1,6 +1,6 @@
 # Most viewed pages
 
-[![Build Status](https://travis-ci.org/prasanna-ds/most-viewed-pages-kstream.svg?branch=master)](https://travis-ci.org/github/prasanna-ds/most-viewed-pages-kstream)
+[![Build Status](https://travis-ci.com/prasanna-ds/most-viewed-pages-kstream.svg?branch=master)](https://travis-ci.org/github/prasanna-ds/most-viewed-pages-kstream)
 
 ## Logic:
 - Joins the messages in these two topics on the user id field

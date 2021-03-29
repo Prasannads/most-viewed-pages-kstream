@@ -5,7 +5,6 @@ organization := "com.data"
 version := "1.0"
 scalaVersion := "2.12.10"
 resolvers += "io.confluent" at "https://packages.confluent.io/maven/"
-resolvers += "graphbuddy" at "virtuslab"
 resolvers += Resolver.mavenLocal
 inThisBuild(List(assemblyJarName in assembly := "most-viewed-pages-kstream.jar"))
 libraryDependencies ++= {
