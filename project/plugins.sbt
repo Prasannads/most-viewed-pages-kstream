@@ -1,4 +1,4 @@
-import Resolver
+import sbt.Resolver
 
 resolvers += Resolver.bintrayIvyRepo("virtuslab", "graphbuddy")
 
