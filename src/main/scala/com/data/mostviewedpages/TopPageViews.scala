@@ -103,8 +103,8 @@ object TopPageViews extends App with AppMain with LazyLogging {
         )
 
     /**
-      * In a window of 1 min with 10 seconds advance - Group the events on Gender and Pageid to get
-      * the sum of viewtime and distinct users in the group.
+      * In a window of 1 min with 10 seconds advance - Group the events on Gender and Page id to get
+      * the sum of view time and distinct users in the group.
       */
     val topPagesStream = joinedPageViewStream
       .selectKey((_, v) => GenderPageId(v.GenderPageId.gender, v.GenderPageId.pageId))
@@ -114,7 +114,7 @@ object TopPageViews extends App with AppMain with LazyLogging {
         val distinctUsers = scala.collection.mutable.Set[String]()
         viewTimeAggregator(v, agg, distinctUsers)
       })
-      .suppress(Suppressed.untilWindowCloses(BufferConfig.unbounded()))
+      .suppress(suppressed = Suppressed.untilWindowCloses(BufferConfig.unbounded()))
       .toStream
       .selectKey((k, _) => k.key())
       .groupByKey
@@ -158,7 +158,7 @@ object TopPageViews extends App with AppMain with LazyLogging {
   }
 
   /**
-    * Aggregator to sum the viewtime and calculate distinct users in a hopping window.
+    * Aggregator to sum the view time and calculate distinct users in a hopping window.
     * @param newValue new value.
     * @param aggValue aggregator.
     * @return Sum of view time and distinct users as pagewithdistinctusers.

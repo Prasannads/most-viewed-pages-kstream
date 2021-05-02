@@ -9,11 +9,11 @@ import org.apache.kafka.streams.{KafkaStreams, Topology}
 class StreamService(topology: Topology, kStreamProperties: Properties) extends LazyLogging {
 
   /**
-    * Start Kstream
+    * Start KStream
     */
   @throws(classOf[Exception])
   def start(): Unit = {
-    logger.info("Starting the kstream application...")
+    logger.info("Starting the KStream application...")
     val kafkaStreams: KafkaStreams = new KafkaStreams(topology, kStreamProperties)
     kafkaStreams.start()
 

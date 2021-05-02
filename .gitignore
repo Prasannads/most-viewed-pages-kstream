@@ -13,6 +13,7 @@ project/plugins/project/
 .lib/
 .bsp
 .semanticgraphs
+.bloop
 
 ### Scala ###
 *.class
@@ -21,6 +22,7 @@ project/plugins/project/
 # Editors
 .vscode/
 .idea/
+.metals/
 
 ### Mac/OSX ###
 .DS_Store

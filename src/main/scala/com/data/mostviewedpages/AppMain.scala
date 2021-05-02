@@ -42,7 +42,7 @@ trait AppMain extends LazyLogging {
   }
 
   /**
-    * Start Kstream server
+    * Start KStream server
     * @param topology Topology built with transformation logic.
     * @param applicationId ApplicationId from the config.
     */
